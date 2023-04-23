@@ -1,0 +1,43 @@
+    1  vim /usr/local/sbin/dynolabs-update.sh 
+    2  ls
+    3  exit
+    4  whoamii
+    5  whoami
+    6  cat /etc/group
+    7  cat /etc/group |grep unixadm
+    8  groupadd unixadm
+    9  cat /etc/group |grep unixadm
+   10  man 5 group
+   11  groupadd dbadm
+   12  groupadd networkadm
+   13  groupadd middleware
+   14  groupadd app1grp
+   15  groupadd project
+   16  cat /etc/group
+   17  cat /etc/group |grep -E 'unixadm|dbaadm|netwrokadm|middleware|app1grp|project'
+   18  cat /etc/group |grep -E 'unixadm|dbadm|networkadm|middleware|app1grp|project'
+   19  groupmod -g 2003 unixadm
+   20  cat /etc/group |grep -E 'unixadm|dbadm|networkadm|middleware|app1grp|project'
+   21  groupmod -g 2004 dbadm
+   22  groupmod -g 2005 networkadm
+   23  groupmod -g 2006 middleware
+   24  groupmod -g 2007 app1grp
+   25  groudel project
+   26  groupdel project
+   27  groupadd -g 2008 projects
+   28  cat /etc/group |grep -E 'unixadm|dbadm|networkadm|middleware|app1grp|projects'
+   29  useradd -g unixadm -G projects user1
+   30  id user1
+   31  cat /etc/passwd |grep user1
+   32  usermod -c "unixtem,unixadm group" user1
+   33  cat /etc/passwd |grep user1
+   34  su - user1
+   35  usermod -s /sbin/nologin
+   36  usermod -s /sbin/nologin user1 
+   37  cat /etc/passwd |grep user1
+   38  su - user1
+   39  usermod -s /bin/bash user1
+   40  cat /etc/passwd |grep user1
+   41  su - user1
+   42  history
+   43  history > history-01
