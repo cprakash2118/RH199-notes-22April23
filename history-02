@@ -1,0 +1,147 @@
+    1  vim /usr/local/sbin/dynolabs-update.sh 
+    2  ls
+    3  exit
+    4  whoamii
+    5  whoami
+    6  cat /etc/group
+    7  cat /etc/group |grep unixadm
+    8  groupadd unixadm
+    9  cat /etc/group |grep unixadm
+   10  man 5 group
+   11  groupadd dbadm
+   12  groupadd networkadm
+   13  groupadd middleware
+   14  groupadd app1grp
+   15  groupadd project
+   16  cat /etc/group
+   17  cat /etc/group |grep -E 'unixadm|dbaadm|netwrokadm|middleware|app1grp|project'
+   18  cat /etc/group |grep -E 'unixadm|dbadm|networkadm|middleware|app1grp|project'
+   19  groupmod -g 2003 unixadm
+   20  cat /etc/group |grep -E 'unixadm|dbadm|networkadm|middleware|app1grp|project'
+   21  groupmod -g 2004 dbadm
+   22  groupmod -g 2005 networkadm
+   23  groupmod -g 2006 middleware
+   24  groupmod -g 2007 app1grp
+   25  groudel project
+   26  groupdel project
+   27  groupadd -g 2008 projects
+   28  cat /etc/group |grep -E 'unixadm|dbadm|networkadm|middleware|app1grp|projects'
+   29  useradd -g unixadm -G projects user1
+   30  id user1
+   31  cat /etc/passwd |grep user1
+   32  usermod -c "unixtem,unixadm group" user1
+   33  cat /etc/passwd |grep user1
+   34  su - user1
+   35  usermod -s /sbin/nologin
+   36  usermod -s /sbin/nologin user1 
+   37  cat /etc/passwd |grep user1
+   38  su - user1
+   39  usermod -s /bin/bash user1
+   40  cat /etc/passwd |grep user1
+   41  su - user1
+   42  history
+   43  history > history-01
+   44  vim history-01 
+   45  git clone https://github.com/cprakash2118/RH199-notes-22April23
+   46  cp history-01 RH199-notes-22April23/
+   47  cd RH199-notes-22April23/
+   48  bit branch 
+   49  git add .
+   50  git status 
+   51  git commit -m "update"
+   52  git push 
+   53  cd
+   54  useradd -g unixadm -G projects user2
+   55  useradd -g unixadm -G projects user3
+   56  useradd -g unixadm -G projects user4
+   57  useradd -g unixadm -G projects user5
+   58  for x in {6..10}; do useradd -g dbadm -G projects user$x; echo "redhat" | passwd --stdin user$x ; done
+   59  cat /etc/group | grep projects 
+   60  for x in {11..15}; do useradd -g networkadm -G projects user$x; echo "redhat" | passwd --stdin user$x ; done
+   61  for x in {16..20}; do useradd -g middleware -G projects user$x; echo "redhat" | passwd --stdin user$x ; done
+   62  for x in {21..25}; do useradd -g aap1grp -G projects user$x; echo "redhat" | passwd --stdin user$x ; done
+   63  for x in {21..25}; do useradd -g app1grp -G projects user$x; echo "redhat" | passwd --stdin user$x ; done
+   64  for x in {1..25}; od
+   65  for x in {1..25}; do id user$x; done
+   66  cat /etc/shadow | grep user
+   67  echo redhat 
+   68  echo redhat | sha1sum 
+   69  man 5 shadow
+   70  passwd user1 
+   71  echo redhat |passwd --stdin user1
+   72  echo redhat |passwd --stdin user2
+   73  cat /etc/shadow | grep user
+   74  echo redhat |passwd --stdin user3
+   75  echo redhat |passwd --stdin user4
+   76  echo redhat |passwd --stdin user5
+   77  cat /etc/shadow | grep user
+   78  chage --help
+   79  chage -m 0 -M 90 -I 10 -E 19620 user25
+   80  chage -l user24 
+   81  chage -l user25
+   82  cat /etc/shadow |grep user25
+   83  cat /etc/shadow |grep user24
+   84  vim /etc/login.defs 
+   85  man 5 login.defs 
+   86  useradd user50
+   87  echo redhat |passwd --stdin user50
+   88  chage -l user50 
+   89  man 5 login.defs 
+   90  vim /etc/login.defs 
+   91  man 5 login.defs 
+   92  mkdir /project
+   93  cd project
+   94  pwd
+   95  cd /project
+   96  mkdir UNIX DBA NETWORK MIDDLEWARE APP1
+   97  ll
+   98  mkdir work 
+   99  cd work/
+  100  pwd
+  101  ll
+  102  umak
+  103  umask 
+  104  umak
+  105  umask 
+  106  touch file1
+  107  mkdir dir1 
+  108  ls -l
+  109  umask 333
+  110  umask 
+  111  touch fil2 
+  112  mkdir dir2 
+  113  ls -l fil2  
+  114  ls -ld dir2
+  115  umask 345
+  116  umask 
+  117  mkdir file3
+  118  rm -rf file3/
+  119  mkdir dir3
+  120  touch file3
+  121  ls -l file3
+  122  ls -ld dir3 
+  123  cd
+  124  cd /project/
+  125  ll
+  126  chmod 770 * 
+  127  ll
+  128  chown root:unixadm UNIX 
+  129  chown root:dbadm DBA/
+  130  chown root:middleware MIDDLEWARE/
+  131  chown root:app1grp APP1/
+  132  ll
+  133  chown root:networkadm NETWORK/
+  134  mv work /tmp/
+  135  ll
+  136  su - user13
+  137  su - user26
+  138  su - user50
+  139  ls -ld /project/
+  140  chmod 770 /project/
+  141  ls -ld /project/
+  142  chown root:projects /project/
+  143  ls -ld /project/
+  144  su - user50
+  145  su - user20
+  146  history 
+  147  history > ~/RH199-notes-22April23/history-02 
