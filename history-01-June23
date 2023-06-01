@@ -1,0 +1,218 @@
+    1  hostname
+    2  whoami 
+    3  for x in {1..15}; do echo "This is $x line" >> file_name; done
+    4  cat file_name 
+    5  exit
+    6  ssh serverb 
+    7  ssh serverb -l student
+    8  ssh serverb 
+    9  mkdir /data
+   10  cd /data/
+   11  pwd
+   12  ll
+   13  ln -s /etc/passwd sl-passwd
+   14  ll
+   15  rm -rf sl-passwd 
+   16  ll
+   17  mkdir -p dir1/dir2/dir3/dir4 
+   18  tree
+   19  cp -rpv /etc/passwd dir1/dir2/dir3/dir4/
+   20  tree
+   21  pwd
+   22  ll
+   23  ln -s dir1/dir2/dir3/dir4/passwd sl-passwd 
+   24  ll
+   25  vim dir1/dir2/dir3/dir4/passwd
+   26  cat sl-passwd 
+   27  vim sl-passwd 
+   28  cat dir1/dir2/dir3/dir4/passwd
+   29  ls -lrthi sl-passwd 
+   30  ls -lrthi dir1/dir2/dir3/dir4/passwd 
+   31  mkdir /opt/oracle 
+   32  cd /opt/oracle/
+   33  pwd
+   34  ll
+   35  mkdir oracle_dir{1..20}
+   36  touch file_oracle{1..20}.txt
+   37  ls
+   38  pwd
+   39  cd /data/
+   40  pwd
+   41  ll
+   42  ln -s /opt/oracle sl-dir-oracle
+   43  ls -l
+   44  cd sl-dir-oracle/
+   45  pwd
+   46  ll
+   47  ls
+   48  pwd
+   49  mkdir data{1..5}
+   50  ls
+   51  cd /opt/oracle/
+   52  pwd
+   53  ls
+   54  history 
+   55  history | grep ln 
+   56  ls -l /etc/grub2.cfg 
+   57  history 
+   58  ll
+   59  ls
+   60  pwd
+   61  cd /data/
+   62  pwd
+   63  ls
+   64  ll
+   65  mkdir new 
+   66  cd new/
+   67  pwd
+   68  ll
+   69  cd ..
+   70  ll
+   71  ln /etc/group sl-file-group
+   72  ls -lrth 
+   73  ls -lrthi 
+   74  ls -lrthi /etc/group
+   75  ln /etc/ hl-etc 
+   76  exit
+   77  useradd john01
+   78  echo redhat | passwd --stdin john01 
+   79  chage -l john01
+   80  vim /etc/login.defs 
+   81  useradd john02
+   82  echo redhat | passwd --stdin john02
+   83  chage -l john02
+   84  su - john01 
+   85  visudo 
+   86  su - john01 
+   87  man 5 sudoers
+   88  su - john01 
+   89  su - john02
+   90  useradd -s /sbin/nologin john03 
+   91  su - john03 
+   92  cat /etc/passwd | grep john 
+   93  su - john-02 
+   94  su - john02 
+   95  su - john03
+   96  sosreport 
+   97  ls -l /var/tmp/sosreport-servera-12345-2023-06-01-omplbfo.tar.xz
+   98  cd /var/tmp/
+   99  ls -l
+  100  tar -xJf sosreport-servera-12345-2023-06-01-omplbfo.tar.xz 
+  101  ll
+  102  cd sosreport-servera-12345-2023-06-01-omplbfo/
+  103  ll
+  104  l
+  105  ls
+  106  vim dmidecode 
+  107  cd ..
+  108  ll
+  109  systemctl get-default 
+  110  host_name=$(hostname) 
+  111  echo $host_name 
+  112  cd 
+  113  mkdir /data
+  114  cd /data/
+  115  pwd
+  116  ll
+  117  rm -rf * 
+  118  ll
+  119  ls -l 
+  120  touch file.txt 
+  121  ls -l file.txt 
+  122  mkdir dir1 
+  123  ls -ld dir1/
+  124  groupadd unixadm_grp 
+  125  chown root:unixadm_grp dir1/
+  126  ls -ld dir1/
+  127  chmod 700 dir1/
+  128  ls -ld dir1/
+  129  chmod ugo=rwx dir1/
+  130  ls -ld dir1/
+  131  chmod u=rwx,g=r-x,o=--- dir1/
+  132  ls -ld dir1/
+  133  chmod u=rwx,g=rx,o=--- dir1/
+  134  ls -ld dir1/
+  135  chmod u=rwx,g=rx,o= dir1/
+  136  ls -ld dir1/
+  137  chmod u=rwx,g=,o= dir1/
+  138  ls -ld dir1/
+  139  umask 
+  140  umask 333
+  141  umask 
+  142  ll
+  143  touch file2.txt 
+  144  mkdir dir2
+  145  umask 
+  146  ls -ld dir2
+  147  ls -l file2.txt 
+  148  umask 567
+  149  umask 
+  150  mkdir dir3 
+  151  touch file3
+  152  ls -ld dir3
+  153  ls -l file3 
+  154  umask 
+  155  chmod 755 dir1
+  156  ls -ld dir1
+  157  ls -ld file.txt 
+  158  exit
+  159  umask 
+  160  cat /etc/bashrc | grep umask
+  161  cat /etc/bashrc | grep -B 4 umask
+  162  cat /etc/bashrc | grep -A-4 -B 4 umask
+  163  cat /etc/bashrc | grep -A-4 -B 5 umask
+  164  cat /etc/bashrc | grep -A -4 -B 5 umask
+  165  cat /etc/bashrc | grep -A 4 -B 5 umask
+  166  echo $UID
+  167  umask 
+  168  su - student
+  169  umask 
+  170  su - student
+  171  exit
+  172  ls -l /etc/shadow
+  173  useradd john
+  174  echo redhat | passwd --stdin john 
+  175  cat /etc/shadow | grep john 
+  176  cat /etc/shadow | grep -w john 
+  177  su - john 
+  178  chage -l john 
+  179  vim /etc/login.defs 
+  180  userdel -r john 
+  181  useradd john 
+  182  echo redhat | passwd --stdin john 
+  183  cat /etc/shadow | grep -w john 
+  184  su - john 
+  185  cat /etc/shadow | grep -w john 
+  186  ls -ld /etc/shadow
+  187  which passwd
+  188  ls -ld /usr/bin/passwd
+  189  ls -ld `which touch`
+  190  su - 
+  191  su - john 
+  192  chmod 4755 /usr/bin/touch 
+  193  ls -ld `which touch`
+  194  su - john 
+  195  chmod /data
+  196  cd /data/
+  197  ll
+  198  mkdir UNIX
+  199  chown root:unixadm_grp UNIX/
+  200  ls -ld UNIX/
+  201  chmod 770 UNIX/
+  202  ll
+  203  rm -rf dir* 
+  204  rm -rf file* 
+  205  l
+  206  ll
+  207  id john
+  208  usermod -G unixadm_grp john 
+  209  id john
+  210  su - john 
+  211  ll
+  212  chmod 2770 UNIX/
+  213  ls -ld
+  214  ls -ld UNIX 
+  215  su - john 
+  216  ls -ld UNIX/
+  217  history 
+  218  history > history-data
